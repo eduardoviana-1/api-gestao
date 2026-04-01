@@ -7,6 +7,9 @@ import { AllExceptionsFilter } from './common/filters/http-exception.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // Habilitar CORS para permitir comunicação com o frontend
+  app.enableCors();
+
   // Configuração do Swagger
   const config = new DocumentBuilder()
     .setTitle('API de Gestão de Equipamentos')
