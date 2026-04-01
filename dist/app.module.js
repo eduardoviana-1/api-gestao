@@ -18,6 +18,7 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const usuario_module_1 = require("./modules/usuario/usuario.module");
 const equipamentos_module_1 = require("./modules/equipamentos/equipamentos.module");
+const estoque_module_1 = require("./modules/estoque/estoque.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -34,6 +35,7 @@ exports.AppModule = AppModule = __decorate([
             }),
             usuario_module_1.UsuarioModule,
             equipamentos_module_1.EquipamentosModule,
+            estoque_module_1.EstoqueModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

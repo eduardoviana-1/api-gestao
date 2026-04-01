@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsuarioModule } from './modules/usuario/usuario.module';
 import { EquipamentosModule } from './modules/equipamentos/equipamentos.module';
+import { EstoqueModule } from './modules/estoque/estoque.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { EquipamentosModule } from './modules/equipamentos/equipamentos.module';
     }),
     UsuarioModule,
     EquipamentosModule,
+    EstoqueModule,
   ],
   controllers: [AppController],
   providers: [AppService],
