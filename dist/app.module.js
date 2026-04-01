@@ -17,6 +17,7 @@ const database_config_1 = __importDefault(require("./config/database.config"));
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const usuario_module_1 = require("./modules/usuario/usuario.module");
+const equipamentos_module_1 = require("./modules/equipamentos/equipamentos.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -32,6 +33,7 @@ exports.AppModule = AppModule = __decorate([
                 useFactory: (configService) => configService.get('database'),
             }),
             usuario_module_1.UsuarioModule,
+            equipamentos_module_1.EquipamentosModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

@@ -5,6 +5,7 @@ import databaseConfig from './config/database.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsuarioModule } from './modules/usuario/usuario.module';
+import { EquipamentosModule } from './modules/equipamentos/equipamentos.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { UsuarioModule } from './modules/usuario/usuario.module';
         configService.get<TypeOrmModuleOptions>('database')!,
     }),
     UsuarioModule,
+    EquipamentosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
