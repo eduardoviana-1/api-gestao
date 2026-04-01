@@ -39,4 +39,8 @@ export class UsuarioService {
 
     return await this.usuarioRepository.save(novoUsuario);
   }
+
+  async listarTodos(): Promise<Usuario[]> {
+    return await this.usuarioRepository.find();
+  }
 }

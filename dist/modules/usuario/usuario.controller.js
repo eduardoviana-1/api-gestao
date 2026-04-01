@@ -24,6 +24,9 @@ let UsuarioController = class UsuarioController {
     async criar(criarUsuarioDto) {
         return this.usuarioService.criar(criarUsuarioDto);
     }
+    async listarTodos() {
+        return this.usuarioService.listarTodos();
+    }
 };
 exports.UsuarioController = UsuarioController;
 __decorate([
@@ -33,6 +36,12 @@ __decorate([
     __metadata("design:paramtypes", [criar_usuario_dto_1.CriarUsuarioDto]),
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "criar", null);
+__decorate([
+    Get(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], UsuarioController.prototype, "listarTodos", null);
 exports.UsuarioController = UsuarioController = __decorate([
     (0, common_1.Controller)('usuario'),
     __metadata("design:paramtypes", [usuario_service_1.UsuarioService])
