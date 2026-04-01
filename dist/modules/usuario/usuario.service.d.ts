@@ -6,4 +6,5 @@ export declare class UsuarioService {
     constructor(usuarioRepository: Repository<Usuario>);
     criar(criarUsuarioDto: CriarUsuarioDto): Promise<Usuario>;
     listarTodos(): Promise<Usuario[]>;
+    remover(id: string): Promise<void>;
 }

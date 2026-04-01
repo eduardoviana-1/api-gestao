@@ -77,6 +77,9 @@ let UsuarioService = class UsuarioService {
     async listarTodos() {
         return await this.usuarioRepository.find();
     }
+    async remover(id) {
+        await this.usuarioRepository.delete(id);
+    }
 };
 exports.UsuarioService = UsuarioService;
 exports.UsuarioService = UsuarioService = __decorate([

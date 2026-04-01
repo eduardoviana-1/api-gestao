@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Delete, Param } from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CriarUsuarioDto } from './dto/criar-usuario.dto';
 
@@ -14,5 +14,10 @@ export class UsuarioController {
   @Get()
   async listarTodos() {
     return this.usuarioService.listarTodos();
+  }
+
+  @Delete(':id')
+  async remover(@Param('id') id: string) {
+    return this.usuarioService.remover(id);
   }
 }

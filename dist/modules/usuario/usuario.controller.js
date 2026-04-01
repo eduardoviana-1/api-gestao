@@ -27,6 +27,9 @@ let UsuarioController = class UsuarioController {
     async listarTodos() {
         return this.usuarioService.listarTodos();
     }
+    async remover(id) {
+        return this.usuarioService.remover(id);
+    }
 };
 exports.UsuarioController = UsuarioController;
 __decorate([
@@ -42,6 +45,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], UsuarioController.prototype, "listarTodos", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], UsuarioController.prototype, "remover", null);
 exports.UsuarioController = UsuarioController = __decorate([
     (0, common_1.Controller)('usuario'),
     __metadata("design:paramtypes", [usuario_service_1.UsuarioService])
