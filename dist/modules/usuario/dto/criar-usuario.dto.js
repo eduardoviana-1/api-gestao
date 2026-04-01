@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CriarUsuarioDto = void 0;
+const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 class CriarUsuarioDto {
     nomeCompleto;
@@ -19,21 +20,25 @@ class CriarUsuarioDto {
 }
 exports.CriarUsuarioDto = CriarUsuarioDto;
 __decorate([
+    (0, swagger_1.ApiProperty)({ example: 'João Silva' }),
     (0, class_validator_1.IsNotEmpty)({ message: 'O nome completo é obrigatório' }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CriarUsuarioDto.prototype, "nomeCompleto", void 0);
 __decorate([
+    (0, swagger_1.ApiProperty)({ example: '12345678901' }),
     (0, class_validator_1.IsNotEmpty)({ message: 'O CPF é obrigatório' }),
     (0, class_validator_1.Length)(11, 11, { message: 'O CPF deve ter exatamente 11 caracteres' }),
     __metadata("design:type", String)
 ], CriarUsuarioDto.prototype, "cpf", void 0);
 __decorate([
+    (0, swagger_1.ApiProperty)({ example: 'joao@email.com' }),
     (0, class_validator_1.IsNotEmpty)({ message: 'O e-mail é obrigatório' }),
     (0, class_validator_1.IsEmail)({}, { message: 'E-mail inválido' }),
     __metadata("design:type", String)
 ], CriarUsuarioDto.prototype, "email", void 0);
 __decorate([
+    (0, swagger_1.ApiProperty)({ example: 'senha123' }),
     (0, class_validator_1.IsNotEmpty)({ message: 'A senha é obrigatória' }),
     (0, class_validator_1.MinLength)(6, { message: 'A senha deve ter no mínimo 6 caracteres' }),
     __metadata("design:type", String)
