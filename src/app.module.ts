@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import databaseConfig from './config/database.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UsuarioModule } from './modules/usuario/usuario.module';
 
 @Module({
   imports: [
@@ -14,8 +15,9 @@ import { AppService } from './app.service';
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
       useFactory: (configService: ConfigService) =>
-        configService.get('database'),
+        configService.get<TypeOrmModuleOptions>('database')!,
     }),
+    UsuarioModule,
   ],
   controllers: [AppController],
   providers: [AppService],
